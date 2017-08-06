@@ -4,13 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "json:server": "json-server --watch data.json"
+    "dev:server": "nodemon server.js",
+    "json:server": "json-server --watch data.json",
+    "dev": "concurrently \"npm run dev:server\" \"npm run json:server\" "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "concurrently": "^3.5.0",
     "express": "^4.15.3",
     "express-graphql": "^0.6.7",
     "graphql": "^0.10.5",
